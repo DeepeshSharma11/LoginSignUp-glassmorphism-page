@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const LoginSignupPage = () => {
-  const [isLogin, setIsLogin] = useState(true); // Toggle between Login and Signup
-  const [role, setRole] = useState(""); // Role selection for Signup (Recruiter or Client)
+const ResponsiveLoginSignup = () => {
+  const [isLogin, setIsLogin] = useState(true); // Toggle between login and signup
+  const [role, setRole] = useState(""); // Role selection for signup (Recruiter or Client)
 
   // Sample user data (for demo purposes)
   const users = [
@@ -22,7 +22,6 @@ const LoginSignupPage = () => {
 
     if (user) {
       alert(`Welcome to the ${user.role === "client" ? "Client" : "Recruiter"} Server!`);
-      // Redirect based on role (for demonstration, just an alert)
     } else {
       alert("Invalid username or password!");
     }
@@ -59,20 +58,20 @@ const LoginSignupPage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600 min-h-screen flex items-center justify-center">
+    <div className="bg-gradient-to-r from-black via-gray-800 to-gray-600 min-h-screen flex items-center justify-center px-4">
       <div
-        className="p-8 rounded-lg max-w-md w-full"
+        className="p-8 rounded-lg max-w-md w-full sm:max-w-lg lg:max-w-xl"
         style={{
-          background: "linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1))",
+          background: "rgba(255, 255, 255, 0.1)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.2)",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
+          border: "1px solid rgba(255, 255, 255, 0.2)",
         }}
       >
         {isLogin ? (
           // Login Section
-          <>
+          <div>
             <h1 className="text-2xl font-bold text-white text-center mb-6">Login</h1>
             <form onSubmit={handleLogin} className="space-y-4">
               <input
@@ -80,65 +79,65 @@ const LoginSignupPage = () => {
                 name="username"
                 placeholder="Username"
                 required
-                className="w-full p-3 rounded-md bg-white/30 text-white placeholder:text-white/70"
+                className="w-full p-3 rounded-md bg-gray-900/30 text-white placeholder:text-gray-400"
               />
               <input
                 type="password"
                 name="password"
                 placeholder="Password"
                 required
-                className="w-full p-3 rounded-md bg-white/30 text-white placeholder:text-white/70"
+                className="w-full p-3 rounded-md bg-gray-900/30 text-white placeholder:text-gray-400"
               />
-              <div className="flex justify-between items-center text-sm text-white">
+              <div className="flex flex-wrap justify-between items-center text-sm text-gray-300">
                 <label className="flex items-center space-x-2">
                   <input
                     type="checkbox"
-                    className="w-4 h-4 rounded bg-white/30 text-purple-500 focus:ring-2 focus:ring-purple-500"
+                    className="w-4 h-4 rounded bg-gray-900/30 text-gray-700 focus:ring-2 focus:ring-gray-500"
                   />
                   <span>Remember me</span>
                 </label>
-                <a href="#" className="hover:underline">
+                <a href="#" className="hover:underline mt-2 sm:mt-0">
                   Forgot password?
                 </a>
               </div>
               <button
                 type="submit"
-                className="w-full bg-green-500 hover:bg-green-600 text-white rounded-md py-2 px-4"
+                className="w-full bg-gray-700 hover:bg-gray-900 text-white rounded-md py-2 px-4"
               >
                 Login
               </button>
-              <p className="text-center text-white mt-4">
+              <p className="text-center text-gray-300 mt-4">
                 Don't have an account?{" "}
                 <button
                   type="button"
                   onClick={() => setIsLogin(false)}
-                  className="text-blue-200 hover:underline"
+                  className="text-gray-400 hover:underline"
                 >
                   Register
                 </button>
               </p>
             </form>
-          </>
+          </div>
         ) : (
           // Signup Section
-          <>
+          <div>
             <h1 className="text-2xl font-bold text-white text-center mb-6">Sign Up</h1>
-            <div className="flex justify-between mb-6">
+            <div className="flex flex-wrap gap-4 justify-between mb-6">
               <button
                 type="button"
                 onClick={() => setRole("recruiter")}
-                className={`${
-                  role === "recruiter" ? "bg-red-600" : "bg-red-500"
-                } hover:bg-red-600 text-white rounded-md py-2 px-4 w-[48%] text-center`}
+                className={`bg-gray-700 hover:bg-gray-900 text-white rounded-md py-2 px-4 flex-1 text-center ${
+                  role === "recruiter" ? "bg-gray-900" : ""
+                }`}
               >
                 Recruiter Sign Up
               </button>
               <button
                 type="button"
                 onClick={() => setRole("client")}
-                className={`${
-                  role === "client" ? "bg-blue-600" : "bg-blue-500"
-                } hover:bg-blue-600 text-white rounded-md py-2 px-4 w-[48%] text-center`}
+                className={`bg-gray-700 hover:bg-gray-900 text-white rounded-md py-2 px-4 flex-1 text-center ${
+                  role === "client" ? "bg-gray-900" : ""
+                }`}
               >
                 Client Sign Up
               </button>
@@ -150,15 +149,13 @@ const LoginSignupPage = () => {
                     type="text"
                     name="companyName"
                     placeholder="Company Name"
-                    required
-                    className="w-full p-3 rounded-md bg-white/30 text-white placeholder:text-white/70"
+                    className="w-full p-3 rounded-md bg-gray-900/30 text-white placeholder:text-gray-400 mb-4"
                   />
                   <input
                     type="text"
                     name="position"
                     placeholder="Position"
-                    required
-                    className="w-full p-3 rounded-md bg-white/30 text-white placeholder:text-white/70"
+                    className="w-full p-3 rounded-md bg-gray-900/30 text-white placeholder:text-gray-400 mb-4"
                   />
                 </>
               )}
@@ -168,15 +165,13 @@ const LoginSignupPage = () => {
                     type="text"
                     name="fullName"
                     placeholder="Full Name"
-                    required
-                    className="w-full p-3 rounded-md bg-white/30 text-white placeholder:text-white/70"
+                    className="w-full p-3 rounded-md bg-gray-900/30 text-white placeholder:text-gray-400 mb-4"
                   />
                   <input
                     type="text"
                     name="organization"
                     placeholder="Company/Organization"
-                    required
-                    className="w-full p-3 rounded-md bg-white/30 text-white placeholder:text-white/70"
+                    className="w-full p-3 rounded-md bg-gray-900/30 text-white placeholder:text-gray-400 mb-4"
                   />
                 </>
               )}
@@ -185,37 +180,37 @@ const LoginSignupPage = () => {
                 name="email"
                 placeholder="Email"
                 required
-                className="w-full p-3 rounded-md bg-white/30 text-white placeholder:text-white/70"
+                className="w-full p-3 rounded-md bg-gray-900/30 text-white placeholder:text-gray-400 mb-4"
               />
               <input
                 type="password"
                 name="password"
                 placeholder="Password"
                 required
-                className="w-full p-3 rounded-md bg-white/30 text-white placeholder:text-white/70"
+                className="w-full p-3 rounded-md bg-gray-900/30 text-white placeholder:text-gray-400 mb-4"
               />
               <button
                 type="submit"
-                className="w-full bg-green-500 hover:bg-green-600 text-white rounded-md py-2 px-4 mt-4"
+                className="w-full bg-gray-700 hover:bg-gray-900 text-white rounded-md py-2 px-4 mt-4"
               >
                 Sign Up
               </button>
-              <p className="text-center text-white mt-4">
+              <p className="text-center text-gray-300 mt-4">
                 Already have an account?{" "}
                 <button
                   type="button"
                   onClick={() => setIsLogin(true)}
-                  className="text-blue-200 hover:underline"
+                  className="text-gray-400 hover:underline"
                 >
                   Login
                 </button>
               </p>
             </form>
-          </>
+          </div>
         )}
       </div>
     </div>
   );
 };
 
-export default LoginSignupPage;
+export default ResponsiveLoginSignup;
