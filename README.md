@@ -81,15 +81,16 @@ project-folder/
 ## Screenshots
 
 ### Login Page
-![image](https://github.com/user-attachments/assets/ff769e5e-c561-431e-a727-e932a5f35e5c)
+![image](https://github.com/user-attachments/assets/acdd8cb1-f412-4aac-b72f-dd66dfba57a9)
 
 
-### Signup Page
-![image](https://github.com/user-attachments/assets/a73815a5-e90f-4576-8331-a8e1af99576e)
+### signUp Page
 **recruiter SignUp**
-![image](https://github.com/user-attachments/assets/e3699d35-0132-43c3-9a7a-92f84237a1c6)
+![image](https://github.com/user-attachments/assets/d0bb987f-8352-4ce2-8cee-418c5a398fdf)
+
 **Clientlogin**
-![image](https://github.com/user-attachments/assets/7b0eebea-3a79-426a-b014-80a1844c2fa8)
+![image](https://github.com/user-attachments/assets/fdc04cb4-1066-4140-8afc-99c37e60ad9d)
+
 
 
 
